@@ -192,4 +192,16 @@ scripts/show_latest_bundle_export.sh
 ```
 
 See `docs/evidence_bundle_exports.md` for the export schema and review format.
+## Task registry
+
+Available local tasks can be listed with:
+
+```bash
+cd envs/market_research_env
+source .venv/bin/activate
+
+scripts/list_tasks.sh
+```
+
+The registry is stored in `data/tasks/index.json` and described in `docs/task_registry.md`.
 
