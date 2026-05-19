@@ -229,3 +229,12 @@ scripts/show_latest_strategy_report.sh
 
 This writes a Markdown report next to the latest strategy benchmark JSON under `/tmp/market_research_env/benchmarks/`.
 
+## Current status document
+
+The current implementation status is summarised in:
+
+```text
+docs/current_status.md
+```
+
+This document records what works now, how to run the environment, what the current benchmark proves, what is not yet implemented, and the recommended next development step.
