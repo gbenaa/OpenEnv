@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openenv-market_research_env"
+version = "0.1.0"
+description = "Browser-based controlled market research environment for OpenEnv"
+requires-python = ">=3.10"
+dependencies = [
+    "openenv-core[core]>=0.2.3",
+    "browsergym-core==0.14.3",
+    "gymnasium>=0.29.0",
+    "playwright==1.44.0",
+    "greenlet==3.0.3",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.3",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+server = "market_research_env.server.app:main"
+
+[tool.setuptools]
+packages = ["market_research_env", "market_research_env.server"]
+package-dir = { "market_research_env" = ".", "market_research_env.server" = "server" }
+
+[tool.setuptools.package-data]
+market_research_env = [
+    "**/*.yaml",
+    "**/*.yml",
+    "**/*.md",
+    "local_web/*.html",
+    "data/tasks/*.json",
+    "data/compliance/*.json",
+]

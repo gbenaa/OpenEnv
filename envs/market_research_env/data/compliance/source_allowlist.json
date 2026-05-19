@@ -1,0 +1,14 @@
+{
+  "allowed_url_prefixes": [
+    "http://localhost",
+    "http://127.0.0.1"
+  ],
+  "blocked_url_prefixes": [
+    "https://",
+    "http://"
+  ],
+  "notes": [
+    "The first prototype should remain on the controlled local mini-web.",
+    "The blocked prefix list is only applied after allowed prefixes are checked."
+  ]
+}
