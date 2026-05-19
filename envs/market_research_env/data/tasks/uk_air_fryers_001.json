@@ -1,0 +1,21 @@
+{
+  "task_id": "uk_air_fryers_001",
+  "market": "UK",
+  "category": "budget air fryers",
+  "objective": "Assess whether there is enough reliable evidence to support a UK affiliate buying guide on budget air fryers.",
+  "required_signals": [
+    "product candidates",
+    "price range",
+    "capacity and household fit",
+    "review themes",
+    "competitor activity",
+    "affiliate suitability",
+    "user risks"
+  ],
+  "success_condition": "Submit at least 5 accepted evidence items and at least 2 rejected evidence items with reasons.",
+  "minimum_accepted_evidence": 5,
+  "minimum_rejected_evidence": 2,
+  "requires_affiliate_disclosure_awareness": true,
+  "start_path": "/air_fryers/index.html",
+  "max_steps": 50
+}
