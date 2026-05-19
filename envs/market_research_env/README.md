@@ -205,3 +205,16 @@ scripts/list_tasks.sh
 
 The registry is stored in `data/tasks/index.json` and described in `docs/task_registry.md`.
 
+## Benchmarking
+
+Run the current scripted espresso baseline repeatedly:
+
+```bash
+scripts/run_benchmark.sh --runs 3
+```
+
+Benchmark summaries are written to:
+
+```text
+/tmp/market_research_env/benchmarks/
+```
