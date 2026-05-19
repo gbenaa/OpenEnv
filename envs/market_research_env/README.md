@@ -160,11 +160,19 @@ The environment gives rewards for relevant evidence and source criticism, and pe
 
 ## Development tests
 
-The first tests focus on deterministic non-browser parts:
+The environment has local test runners so fast tests and browser-backed integration tests can be run separately.
+
+From the environment directory:
 
 ```bash
 cd envs/market_research_env
-pytest
+source .venv/bin/activate
+
+scripts/run_fast_tests.sh
+scripts/run_integration_tests.sh
+scripts/run_all_tests.sh
 ```
 
-Browser-backed integration tests can be added once BrowserGym and Playwright are confirmed locally.
+The fast tests cover deterministic scoring, evidence storage, compliance, and local helper behaviour.
+
+The integration tests run the browser-backed scripted baseline episode using BrowserGym and Playwright.
