@@ -232,3 +232,20 @@ Likely next improvements:
 3. Add freshness classification beyond string matching.
 4. Add benchmark summary output across repeated runs.
 5. Add a second task to test generality.
+
+## Duplicate and weak-evidence controls
+
+Submission scoring now checks accepted evidence records for simple quality-control failures.
+
+Duplicate accepted evidence is defined as a repeated normalised claim from the same source path. The first occurrence is allowed, but each repeated occurrence is penalised.
+
+Weak accepted evidence is currently defined as an accepted record missing one of the following:
+
+```text
+claim
+source_url
+rationale
+```
+
+These checks are intentionally simple. They are designed to stop obvious score-gaming behaviour before more sophisticated source weighting or semantic duplicate detection is added.
+

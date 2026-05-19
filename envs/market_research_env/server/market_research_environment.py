@@ -332,6 +332,7 @@ class MarketResearchEnvironment(
             minimum_accepted=minimum_accepted,
             minimum_rejected=minimum_rejected,
             disallowed_visit_count=self._state.disallowed_visit_count,
+            accepted_records=accepted,
         )
         self._last_score_details = details
         self._state.submitted = True
