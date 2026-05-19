@@ -147,7 +147,6 @@ class MarketResearchEnvironment(
             task_entrypoint=LocalMarketResearchTask,
             task_kwargs={"base_url": self._base_url, "start_path": start_path},
             headless=self.headless,
-            slow_mo=100,
         )
         self._browser_env.reset()
 
