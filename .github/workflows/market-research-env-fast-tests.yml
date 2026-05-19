@@ -1,0 +1,45 @@
+name: Market Research Env Fast Tests
+
+on:
+  pull_request:
+    paths:
+      - "envs/market_research_env/**"
+      - ".github/workflows/market-research-env-fast-tests.yml"
+  push:
+    branches:
+      - main
+      - market-research-browser-env
+    paths:
+      - "envs/market_research_env/**"
+      - ".github/workflows/market-research-env-fast-tests.yml"
+
+jobs:
+  fast-tests:
+    name: Fast tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    defaults:
+      run:
+        working-directory: envs/market_research_env
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+          cache-dependency-path: |
+            envs/market_research_env/pyproject.toml
+
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install market research environment
+        run: python -m pip install -e ".[dev]"
+
+      - name: Run fast tests
+        run: scripts/run_fast_tests.sh

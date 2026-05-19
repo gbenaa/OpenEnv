@@ -1,0 +1,6 @@
+name: market_research_env
+description: Browser-based controlled market research environment for OpenEnv
+version: 0.1.0
+entrypoint: market_research_env.server.app:app
+dockerfile: server/Dockerfile
+python_package: market_research_env
