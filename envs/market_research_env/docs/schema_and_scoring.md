@@ -249,3 +249,36 @@ rationale
 
 These checks are intentionally simple. They are designed to stop obvious score-gaming behaviour before more sophisticated source weighting or semantic duplicate detection is added.
 
+## Freshness and source-type scoring
+
+The scorer now distinguishes freshness, source type, and reliability more explicitly.
+
+Accepted evidence can receive positive support from:
+
+```text
+freshness_current
+source_type_controlled_local_page
+reliability_controlled_local_page
+```
+
+Accepted evidence can receive penalties from:
+
+```text
+freshness_stale
+freshness_archived
+source_type_archived_page
+accepted_stale_or_archived_evidence
+accepted_unsupported_or_misleading_claim
+```
+
+Rejected evidence can receive additional reward when the rejection reason aligns with the evidence weakness:
+
+```text
+rejected_freshness_stale
+rejected_freshness_archived
+rejected_unsupported_reliability
+```
+
+The current local prototype uses `controlled_local_page` as the main source type. This is deliberately conservative: the local pages are trusted as controlled test fixtures, but the agent is still expected to distinguish current evidence from stale or misleading evidence.
+
+The scoring model is still intentionally simple. The next likely improvement is to separate product-page, competitor-page, user-discussion, affiliate-terms, stale-archive, and unsupported-sales source classes more formally.
