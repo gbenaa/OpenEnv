@@ -296,3 +296,12 @@ scripts/list_snapshots.sh
 
 Manual snapshots are a repeatable bridge between the controlled local mini-web and later authorised real-world page snapshots.
 
+## Recommendation evidence summary
+
+After a bundle has been exported, a recommendation-facing evidence summary can be shown with:
+
+```bash
+scripts/show_latest_recommendation_summary.sh
+```
+
+This converts accepted and rejected evidence into product-level signals for human review.
