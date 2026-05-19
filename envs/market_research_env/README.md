@@ -271,3 +271,13 @@ docs/current_status.md
 ```
 
 This document records what works now, how to run the environment, what the current benchmark proves, what is not yet implemented, and the recommended next development step.
+
+## Branch handover
+
+The current implementation status is summarised in:
+
+```text
+docs/branch_handover.md
+```
+
+Read this before extending the environment, especially when starting a new development thread.
