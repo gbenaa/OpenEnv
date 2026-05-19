@@ -218,3 +218,14 @@ Benchmark summaries are written to:
 ```text
 /tmp/market_research_env/benchmarks/
 ```
+
+### Strategy reports
+
+After running the strategy benchmark, generate a readable comparison report:
+
+```bash
+scripts/show_latest_strategy_report.sh
+```
+
+This writes a Markdown report next to the latest strategy benchmark JSON under `/tmp/market_research_env/benchmarks/`.
+
