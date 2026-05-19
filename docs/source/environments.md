@@ -563,6 +563,20 @@ AgentWorldModel-1K — 1,000 synthetic MCP tool-use environments with 10,000 tas
 ```
 ````
 
+````{grid-item-card} Market Research
+:class-card: sd-border-1
+
+This environment is a first controlled OpenEnv prototype for repeatable agentic market-research workflows.
+
++++
+```{button-link} environments/market_research.html
+:color: primary
+:outline:
+
+{octicon}`file;1em` Docs
+```
+````
+
 `````
 
 ```{tip}
@@ -634,4 +648,5 @@ environments/unity
 environments/wildfire
 environments/agent_world_model
 environments/opencode
+environments/market_research
 ```
