@@ -305,3 +305,13 @@ scripts/show_latest_recommendation_summary.sh
 ```
 
 This converts accepted and rejected evidence into product-level signals for human review.
+
+### Human review reports
+
+After running a baseline or benchmark episode, generate a reviewer-facing Markdown report for the latest exported bundle:
+
+```bash
+scripts/show_latest_human_review_report.sh
+```
+
+The report combines score, success status, accepted evidence, rejected evidence, score reasons, warnings, and a human review checklist.
