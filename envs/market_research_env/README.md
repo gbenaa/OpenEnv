@@ -280,4 +280,19 @@ The current implementation status is summarised in:
 docs/branch_handover.md
 ```
 
-Read this before extending the environment, especially when starting a new development thread.
+Read this before extending the environment, especially when starting a new development thread.\n\n## Manual snapshots
+
+Manual snapshot support is documented in:
+
+```text
+docs/snapshot_ingestion.md
+```
+
+Snapshot sets can be listed with:
+
+```bash
+scripts/list_snapshots.sh
+```
+
+Manual snapshots are a repeatable bridge between the controlled local mini-web and later authorised real-world page snapshots.
+

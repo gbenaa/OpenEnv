@@ -1,0 +1,29 @@
+{
+  "snapshots": [
+    {
+      "snapshot_id": "espresso_manual_snapshot_001",
+      "task_id": "uk_espresso_001",
+      "market": "UK",
+      "category": "budget espresso machines",
+      "source_mode": "manual_snapshot",
+      "created_at": "2026-05-19T20:30:00Z",
+      "description": "Example saved-page snapshot manifest for the espresso task. The pages are copied from the controlled local mini-web so the ingestion path remains deterministic.",
+      "pages": [
+        {
+          "snapshot_path": "espresso_manual_snapshot_001/product_a.html",
+          "source_url": "https://example.invalid/saved/product_a.html",
+          "source_type": "manual_snapshot",
+          "observed_at": "2026-05-19T20:30:00Z",
+          "title": "BrewStart Compact 15 Bar snapshot"
+        },
+        {
+          "snapshot_path": "espresso_manual_snapshot_001/affiliate_terms.html",
+          "source_url": "https://example.invalid/saved/affiliate_terms.html",
+          "source_type": "manual_snapshot",
+          "observed_at": "2026-05-19T20:30:00Z",
+          "title": "Affiliate terms snapshot"
+        }
+      ]
+    }
+  ]
+}
