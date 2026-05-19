@@ -176,3 +176,20 @@ scripts/run_all_tests.sh
 The fast tests cover deterministic scoring, evidence storage, compliance, and local helper behaviour.
 
 The integration tests run the browser-backed scripted baseline episode using BrowserGym and Playwright.
+## Evidence bundle exports
+
+After a submitted episode, JSON and Markdown evidence bundles are written under:
+
+```text
+/tmp/market_research_env/bundles/
+```
+
+Run the baseline and inspect the latest export with:
+
+```bash
+scripts/run_baseline_episode.sh
+scripts/show_latest_bundle_export.sh
+```
+
+See `docs/evidence_bundle_exports.md` for the export schema and review format.
+

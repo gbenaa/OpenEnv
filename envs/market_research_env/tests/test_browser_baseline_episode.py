@@ -1,3 +1,5 @@
+import json
+
 import pytest
 
 from market_research_env.models import MarketResearchAction
@@ -130,6 +132,13 @@ def test_scripted_browser_baseline_episode():
         assert len(obs.evidence_bundle["accepted_evidence"]) >= 5
         assert len(obs.evidence_bundle["rejected_evidence"]) >= 2
         assert obs.evidence_bundle["cum_reward"] > 0
+        export_paths = obs.evidence_bundle.get("export_paths", {})
+        assert export_paths.get("json")
+
+        with open(export_paths["json"], encoding="utf-8") as handle:
+            exported_bundle = json.load(handle)
+
+        assert exported_bundle["cum_reward"] == obs.evidence_bundle["cum_reward"]
 
     finally:
         env.close()

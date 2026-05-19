@@ -19,6 +19,7 @@ from market_research_env.models import (
 from market_research_env.server.compliance import ComplianceChecker
 from market_research_env.server.evidence_store import EvidenceStore
 from market_research_env.server.extractors import clean_text, excerpt
+from market_research_env.server.exporters import write_evidence_bundle_exports
 from market_research_env.server.local_web_server import LocalWebServer
 from market_research_env.server.logger import TrajectoryLogger
 from market_research_env.server.scorer import MarketResearchScorer
@@ -95,6 +96,7 @@ class MarketResearchEnvironment(
         self._links: list[dict[str, str]] = []
         self._last_action_error: str | None = None
         self._last_score_details: dict[str, Any] = {}
+        self._last_export_paths: dict[str, str] = {}
 
         self.evidence_store = EvidenceStore()
         self.scorer = MarketResearchScorer()
@@ -113,6 +115,7 @@ class MarketResearchEnvironment(
         self.logger.reset()
         self._last_action_error = None
         self._last_score_details = {}
+        self._last_export_paths = {}
         self._links = []
         self._page_text = ""
 
@@ -337,6 +340,17 @@ class MarketResearchEnvironment(
         )
         self._last_score_details = details
         self._state.submitted = True
+
+        bundle = self._bundle()
+        bundle["cum_reward"] = self._state.cum_reward + float(reward)
+        self._last_export_paths = write_evidence_bundle_exports(
+            output_dir=self.output_dir / "bundles",
+            episode_id=self._state.episode_id or "episode",
+            bundle=bundle,
+            score_details=details,
+        )
+        self.logger.log("bundle_export", {"export_paths": self._last_export_paths})
+
         return reward, True, "Submitted evidence bundle." if success else "Submitted incomplete or weak evidence bundle."
 
     def _refresh_page_snapshot(self) -> None:
@@ -367,6 +381,7 @@ class MarketResearchEnvironment(
             "pending_evidence": [record.model_dump() for record in self.evidence_store.pending()],
             "cum_reward": self._state.cum_reward,
             "submitted": self._state.submitted,
+            "export_paths": self._last_export_paths,
         }
 
     def _observation(self, message: str, reward: float | None, done: bool) -> MarketResearchObservation:
