@@ -159,6 +159,21 @@ no disallowed external URLs
 The environment gives rewards for relevant evidence and source criticism, and penalties for stale, unsupported, duplicated, or non-compliant claims.
 
 
+
+### Cross-task benchmark
+
+The cross-task benchmark runs both the positive espresso baseline and the negative-control smart-rings baseline.
+
+```bash
+scripts/run_cross_task_benchmark.sh --runs 1
+```
+
+It writes JSON and Markdown outputs under:
+
+```text
+/tmp/market_research_env/cross_task_benchmarks/
+```
+
 ### Negative-control baseline
 
 The negative-control baseline checks that the environment can represent an insufficient-evidence conclusion.
