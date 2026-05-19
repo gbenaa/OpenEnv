@@ -1,0 +1,22 @@
+{
+  "task_id": "uk_smart_rings_negative_001",
+  "market": "UK",
+  "category": "budget smart rings",
+  "objective": "Assess whether there is enough reliable evidence to support a UK affiliate buying guide on budget smart rings. This is a negative-control task: the intended conclusion is that the evidence is not yet sufficient.",
+  "required_signals": [
+    "available product candidates",
+    "price range",
+    "review reliability",
+    "user risks",
+    "unsupported claims",
+    "affiliate-disclosure awareness"
+  ],
+  "success_condition": "Submit a bundle that accepts disclosure or insufficiency evidence and rejects at least three weak, stale, or unsupported evidence items.",
+  "minimum_accepted_evidence": 1,
+  "minimum_rejected_evidence": 3,
+  "requires_affiliate_disclosure_awareness": true,
+  "negative_control": true,
+  "expected_conclusion": "insufficient_evidence",
+  "start_path": "/smart_rings_negative/index.html",
+  "max_steps": 50
+}

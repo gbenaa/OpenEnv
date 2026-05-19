@@ -158,6 +158,24 @@ no disallowed external URLs
 
 The environment gives rewards for relevant evidence and source criticism, and penalties for stale, unsupported, duplicated, or non-compliant claims.
 
+
+### Negative-control baseline
+
+The negative-control baseline checks that the environment can represent an insufficient-evidence conclusion.
+
+```bash
+scripts/run_negative_control_baseline.sh
+```
+
+Expected output shape:
+
+```text
+success=True
+expected_conclusion=insufficient_evidence
+accepted=1
+rejected=4
+```
+
 ## Development tests
 
 The environment has local test runners so fast tests and browser-backed integration tests can be run separately.
