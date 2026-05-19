@@ -315,3 +315,12 @@ scripts/show_latest_human_review_report.sh
 ```
 
 The report combines score, success status, accepted evidence, rejected evidence, score reasons, warnings, and a human review checklist.
+## PR review summary
+
+For a concise reviewer-facing summary of this branch, see:
+
+```text
+docs/pr_summary.md
+```
+
+That document describes what this environment adds, how to test it, what the benchmarks currently prove, what is out of scope, and the recommended next development step.
