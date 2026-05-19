@@ -324,3 +324,19 @@ docs/pr_summary.md
 ```
 
 That document describes what this environment adds, how to test it, what the benchmarks currently prove, what is out of scope, and the recommended next development step.
+
+## GitHub Actions
+
+The repository includes a lightweight GitHub Actions workflow for this environment:
+
+```text
+.github/workflows/market-research-env-fast-tests.yml
+```
+
+It runs the market-research environment fast tests on pull requests and pushes that touch `envs/market_research_env/`.
+
+Browser-backed integration tests remain local for now. See:
+
+```text
+docs/ci_checks.md
+```
